@@ -1,13 +1,14 @@
 import './MovieList.css';
-import type { MovieType } from '../types/type';
+import type { MovieCompType } from '../types/type';
 import { useEffect, useState, useMemo, useRef } from 'react';
 import { getMovies } from '../src/service/app';
 import Movie from './Movie'; 
 
 const MovieList = () => {
-    const [movies, setMovies] = useState<MovieType[]>([]);
+    const [movies, setMovies] = useState<MovieCompType[]>([]);
     const [search, setSearch] = useState<string>('');
-    const [favoritesCount, setFavoritesCount] = useState<number>(0); 
+    // A tömb most már a filmek címeit (string) fogja tárolni
+    const [favoritesCount, setFavoritesCount] = useState<string[]>([]);
     const inputRef = useRef<HTMLInputElement>(null);
     
     useEffect(() => {
@@ -26,6 +27,19 @@ const MovieList = () => {
         );
     }, [search, movies]); 
 
+    // 1. Átírtuk a függvényt, hogy id helyett a film címét (title) várja stringként
+    function handleFav(title: string) {
+        setFavoritesCount(prev => {
+            if(prev.includes(title)) {
+                // Ha már benne van, kiszűrjük (eltávolítjuk)
+                return prev.filter(favTitle => favTitle !== title);
+            } else {
+                // Ha nincs benne, hozzáadjuk az új címet a tömbhöz
+                return [...prev, title];
+            }
+        });
+    }
+
     return (
         <>
         <header>
@@ -38,13 +52,20 @@ const MovieList = () => {
                 value={search} 
                 onChange={(e) => setSearch(e.target.value)}
             />
-            <h3>Kedvencek száma: {favoritesCount}</h3>
+            <h3>Kedvencek száma: {favoritesCount.length}</h3>
         </header>
         
-
         <main>
-            {searchableMovies.length > 0 && searchableMovies.map((m, i) => (
-                <Movie key={m.id} movie={m}  />
+            {searchableMovies.length > 0 && searchableMovies.map((m) => (
+                <Movie 
+                    key={m.id} 
+                    movie={m} 
+                    /* 
+                       2. Mivel a handleFav függvény most már 'string' típusú címet vár,
+                       ezért egy névtelen függvénnyel () => handleFav(m.title) adjuk át neki.
+                    */
+                    fav={() => handleFav(m.title)} 
+                />
             ))}
         </main>
         </>
