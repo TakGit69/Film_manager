@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "A remény rabjai",
+    "genre": "Dráma",
+    "year": 1994,
+    "description": "Egy ártatlanul elítélt bankár évtizedeken át tartó története a Shawshanki börtönben.",
+    "rating": 9.3
+  },
+  {
+    "id": 2,
+    "title": "Eredet",
+    "genre": "Sci-fi",
+    "year": 2010,
+    "description": "Egy tolvaj, aki mások álmaiba lopózva lop ötleteket, ezúttal fordított feladatot kap.",
+    "rating": 8.8
+  },
+  {
+    "id": 3,
+    "title": "Toy Story - A játékok titkos élete",
+    "genre": "Animációs",
+    "year": 1995,
+    "description": "Egy fiú játékai életre kelnek, amikor senki sem néz oda.",
+    "rating": 8.3
+  },
+  {
+    "id": 4,
+    "title": "A sötét lovag",
+    "genre": "Akció",
+    "year": 2008,
+    "description": "Batman szembeszáll a Joker által Gotham városára szabadított káosszal.",
+    "rating": 9.0
+  },
+  {
+    "id": 5,
+    "title": "Élősködők",
+    "genre": "Dráma",
+    "year": 2019,
+    "description": "Egy szegény család fokozatosan beépül egy gazdag család háztartásába.",
+    "rating": 8.5
+  },
+  {
+    "id": 6,
+    "title": "Coco - Titkok webhelye",
+    "genre": "Animációs",
+    "year": 2017,
+    "description": "Egy zenerajongó fiú a Holtak Napján a család és az emlékezés fontosságát fedezi fel.",
+    "rating": 8.4
+  },
+  {
+    "id": 7,
+    "title": "Csillagok között",
+    "genre": "Sci-fi",
+    "year": 2014,
+    "description": "Egy űrhajós csapat féreglyukon át keres új otthont az emberiségnek.",
+    "rating": 8.6
+  },
+  {
+    "id": 8,
+    "title": "Jurassic Park",
+    "genre": "Kaland",
+    "year": 1993,
+    "description": "Egy szigeten feltámasztott dinoszauruszok szabadulnak el egy elit vendégcsoport rémületére.",
+    "rating": 8.2
+  }
+]

@@ -1,0 +1,12 @@
+.favorites{
+    color: white;
+    a{
+        text-decoration: none;
+        cursor: pointer;
+        user-select: none;
+        color: red;
+        display: inline-block;
+        padding: .2rem;
+        font-size: 5rem;
+    }
+}
